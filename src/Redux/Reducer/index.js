@@ -21,7 +21,7 @@ export default(state,action)=>{
             default:false
         };
         return Object.assign({
-            ...state,//要将state所有的值得解构出来，再针对修改某一值
+            ...state,//要将state所有的值解构出来，再针对修改某一个值
             addressArr:[
                 ...state.addressArr,
                 obj
