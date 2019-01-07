@@ -2,6 +2,7 @@
 import {createStore} from 'redux'
 import reducer from '../Reducer' 
 const initValue={
+    flag:'redux ',
     addressArr:[
         {
             id:1,

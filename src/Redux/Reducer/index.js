@@ -21,6 +21,7 @@ export default(state,action)=>{
             default:false
         };
         return Object.assign({
+            ...state,//要将state所有的值得解构出来，再针对修改某一值
             addressArr:[
                 ...state.addressArr,
                 obj
@@ -30,6 +31,7 @@ export default(state,action)=>{
         //删除单个
         case DELETE_ADDRESS_ITEM:
         return {
+            ...state,
             addressArr:state.addressArr.filter(function(item){
                 return action.id !== item.id
             })
@@ -38,11 +40,12 @@ export default(state,action)=>{
         //全部删除
         case DELETE_ADDRESS_ALL:
         state.addressArr = [];
-        return Object.assign({addressArr:[]});
+        return Object.assign({...state,addressArr:[]});
 
         //设置默认值
         case SET_ADDRESS_DEFAULT:
         return {
+            ...state,
             addressArr:state.addressArr.map(function(item){
                 item.default = false;
                 if(action.id === item.id)item.default = true;
