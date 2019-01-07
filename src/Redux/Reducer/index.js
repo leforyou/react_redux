@@ -8,6 +8,8 @@ import {
 返回的state必须是全新的对象，否则，redux不会执行listening方法，
 因为redux会认为state没有更新过，没必要重新渲染view。
 */
+import { combineReducers } from 'redux';
+console.log(combineReducers)
 export default(state,action)=>{
     //console.log('state,action',state,action)
     switch (action.type){
